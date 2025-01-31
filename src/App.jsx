@@ -1,4 +1,3 @@
-import ExpenseItem from "./components/ExpenseItem.jsx";
 import './App.css';
 import Expenses from "./components/Expenses.jsx";
 

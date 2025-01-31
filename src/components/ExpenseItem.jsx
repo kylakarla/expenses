@@ -2,7 +2,7 @@
 import './ExpenseItem.css'
 import '../App.jsx'
 import ExpenseDate from './ExpenseDate.jsx'
-
+import Card from './card.jsx'
 
 const ExpenseItem = (props) => {
 

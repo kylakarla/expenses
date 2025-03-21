@@ -1,35 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Expenses from "./components/Expenses.jsx";
 import NewExpense from './components/NewExpense.jsx';
+import Card from './components/card.jsx';
 
 const App = () => {
-  const [expenses, setExpenses] = useState([
-    {
-      id: 'e1',
-      date: new Date(2024, 10, 12),
-      title: 'New book',
-      price: 30.99
-    },
-    {
-      id: 'e2',
-      date: new Date(2024, 10, 12),
-      title: 'New jeans',
-      price: 99.99
-    },
-      {
-      id: 'e3',
-      date: new Date(2023, 9, 11),
-      title: 'New shirt',
-      price: 39.99
-    },
-    {
-      id: 'e4',
-      date: new Date(2025, 10, 22),
-      title: 'New TV',
-      price: 299.99
-    }
-  ]);
+  const [expenses, setExpenses] = useState(() => {
+    const expensesFormLS = JSON.parse(localStorage.getItem('expenses'));
+    return expensesFormLS || [];
+  })
+  
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  },[expenses]);
   
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {

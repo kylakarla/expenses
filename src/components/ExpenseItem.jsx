@@ -11,14 +11,14 @@ const ExpenseItem = (props) => {
 
 
     return (
-        <li className='expense-item'>
+        <Card className='expense-item'>
             <ExpenseDate date={props.data.date}></ExpenseDate>
             <div className='expense-item_description'>
                 <h2>{props.data.title}</h2>
                 <div className='expense-item_price'>{props.data.amount}</div>
                 <button onClick={ClickHandeler}>Click Me</button>
             </div>
-        </li>
+        </Card>
     )
 }
 export default ExpenseItem

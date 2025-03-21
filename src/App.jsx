@@ -21,10 +21,10 @@ const App = () => {
   };
 
   return (
-    <div className='app'>
+    <Card className='app'>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
-    </div>
+    </Card>
   );
 };
 
